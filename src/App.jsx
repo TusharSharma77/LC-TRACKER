@@ -531,6 +531,98 @@ const PROBLEMS_RAW = [
   { num: 3381, name: "Maximum Subarray Sum With Length Divisible by K",          slug: "maximum-subarray-sum-with-length-divisible-by-k",            topic: "Hashing" },
   { num: 3429, name: "Paint House IV",                                           slug: "paint-house-iv",                                             topic: "DP" },
   { num: 3448, name: "Count Substrings Divisible By Last Digit",                 slug: "count-substrings-divisible-by-last-digit",                   topic: "DP" },
+  // ── Greedy Problems ──
+  // Phase 1: Basic Greedy
+  { num: 455,  name: "Assign Cookies",                                         slug: "assign-cookies",                                             topic: "Greedy" },
+  { num: 1005, name: "Maximize Sum Of Array After K Negations",                slug: "maximize-sum-of-array-after-k-negations",                   topic: "Greedy" },
+  { num: 976,  name: "Largest Perimeter Triangle",                             slug: "largest-perimeter-triangle",                                topic: "Greedy" },
+  { num: 1710, name: "Maximum Units on a Truck",                               slug: "maximum-units-on-a-truck",                                  topic: "Greedy" },
+  { num: 1403, name: "Minimum Subsequence in Non-Increasing Order",            slug: "minimum-subsequence-in-non-increasing-order",               topic: "Greedy" },
+  { num: 561,  name: "Array Partition",                                        slug: "array-partition",                                           topic: "Greedy" },
+  { num: 881,  name: "Boats to Save People",                                   slug: "boats-to-save-people",                                      topic: "Greedy" },
+  { num: 1217, name: "Minimum Cost to Move Chips to The Same Position",        slug: "minimum-cost-to-move-chips-to-the-same-position",           topic: "Greedy" },
+  { num: 991,  name: "Broken Calculator",                                      slug: "broken-calculator",                                         topic: "Greedy" },
+  { num: 2645, name: "Minimum Additions to Make Valid String",                 slug: "minimum-additions-to-make-valid-string",                    topic: "Greedy" },
+  { num: 605,  name: "Can Place Flowers",                                      slug: "can-place-flowers",                                         topic: "Greedy" },
+  { num: 860,  name: "Lemonade Change",                                        slug: "lemonade-change",                                           topic: "Greedy" },
+  { num: 874,  name: "Walking Robot Simulation",                               slug: "walking-robot-simulation",                                  topic: "Greedy" },
+  { num: 452,  name: "Minimum Number of Arrows to Burst Balloons",             slug: "minimum-number-of-arrows-to-burst-balloons",                topic: "Greedy" },
+  { num: 1029, name: "Two City Scheduling",                                    slug: "two-city-scheduling",                                       topic: "Greedy" },
+  // Phase 2: Interval Problems
+  { num: 252,  name: "Meeting Rooms",                                          slug: "meeting-rooms",                                             topic: "Greedy" },
+  { num: 253,  name: "Meeting Rooms II",                                       slug: "meeting-rooms-ii",                                          topic: "Greedy" },
+  { num: 56,   name: "Merge Intervals",                                        slug: "merge-intervals",                                           topic: "Greedy" },
+  { num: 57,   name: "Insert Interval",                                        slug: "insert-interval",                                           topic: "Greedy" },
+  { num: 435,  name: "Non-overlapping Intervals",                              slug: "non-overlapping-intervals",                                 topic: "Greedy" },
+  { num: 986,  name: "Interval List Intersections",                            slug: "interval-list-intersections",                               topic: "Greedy" },
+  { num: 759,  name: "Employee Free Time",                                     slug: "employee-free-time",                                        topic: "Greedy" },
+  { num: 1288, name: "Remove Covered Intervals",                               slug: "remove-covered-intervals",                                  topic: "Greedy" },
+  { num: 1353, name: "Maximum Number of Events That Can Be Attended",          slug: "maximum-number-of-events-that-can-be-attended",             topic: "Greedy" },
+  { num: 1235, name: "Maximum Profit in Job Scheduling",                       slug: "maximum-profit-in-job-scheduling",                          topic: "Greedy" },
+  { num: 2406, name: "Divide Intervals Into Minimum Number of Groups",         slug: "divide-intervals-into-minimum-number-of-groups",            topic: "Greedy" },
+  { num: 1751, name: "Maximum Number of Events That Can Be Attended II",       slug: "maximum-number-of-events-that-can-be-attended-ii",          topic: "Greedy" },
+  { num: 1851, name: "Minimum Interval to Include Each Query",                 slug: "minimum-interval-to-include-each-query",                    topic: "Greedy" },
+  { num: 1094, name: "Car Pooling",                                            slug: "car-pooling",                                               topic: "Greedy" },
+  // Phase 3: Greedy with Two Pointers
+  { num: 11,   name: "Container With Most Water",                              slug: "container-with-most-water",                                 topic: "Greedy" },
+  { num: 948,  name: "Bag of Tokens",                                          slug: "bag-of-tokens",                                             topic: "Greedy" },
+  { num: 611,  name: "Valid Triangle Number",                                  slug: "valid-triangle-number",                                     topic: "Greedy" },
+  { num: 259,  name: "3Sum Smaller",                                           slug: "3sum-smaller",                                              topic: "Greedy" },
+  { num: 1877, name: "Minimize Maximum Pair Sum in Array",                     slug: "minimize-maximum-pair-sum-in-array",                        topic: "Greedy" },
+  { num: 1013, name: "Partition Array Into Three Parts With Equal Sum",        slug: "partition-array-into-three-parts-with-equal-sum",           topic: "Greedy" },
+  { num: 2193, name: "Minimum Number of Moves to Make Palindrome",             slug: "minimum-number-of-moves-to-make-palindrome",                topic: "Greedy" },
+  { num: 1405, name: "Longest Happy String",                                   slug: "longest-happy-string",                                      topic: "Greedy" },
+  { num: 1400, name: "Construct K Palindrome Strings",                         slug: "construct-k-palindrome-strings",                            topic: "Greedy" },
+  // Phase 4: Greedy String Problems
+  { num: 402,  name: "Remove K Digits",                                        slug: "remove-k-digits",                                           topic: "Greedy" },
+  { num: 316,  name: "Remove Duplicate Letters",                               slug: "remove-duplicate-letters",                                  topic: "Greedy" },
+  { num: 1081, name: "Smallest Subsequence of Distinct Characters",            slug: "smallest-subsequence-of-distinct-characters",               topic: "Greedy" },
+  { num: 763,  name: "Partition Labels",                                       slug: "partition-labels",                                          topic: "Greedy" },
+  { num: 1221, name: "Split a String in Balanced Strings",                     slug: "split-a-string-in-balanced-strings",                        topic: "Greedy" },
+  { num: 1647, name: "Minimum Deletions to Make Character Frequencies Unique", slug: "minimum-deletions-to-make-character-frequencies-unique",    topic: "Greedy" },
+  { num: 606,  name: "Construct String from Binary Tree",                      slug: "construct-string-from-binary-tree",                         topic: "Greedy" },
+  { num: 1963, name: "Minimum Number of Swaps to Make the String Balanced",    slug: "minimum-number-of-swaps-to-make-the-string-balanced",       topic: "Greedy" },
+  { num: 1898, name: "Maximum Number of Removable Characters",                 slug: "maximum-number-of-removable-characters",                    topic: "Greedy" },
+  // Phase 5: Greedy with Priority Queue/Heap
+  { num: 1046, name: "Last Stone Weight",                                      slug: "last-stone-weight",                                         topic: "Greedy" },
+  { num: 621,  name: "Task Scheduler",                                         slug: "task-scheduler",                                            topic: "Greedy" },
+  { num: 767,  name: "Reorganize String",                                      slug: "reorganize-string",                                         topic: "Greedy" },
+  { num: 857,  name: "Minimum Cost to Hire K Workers",                         slug: "minimum-cost-to-hire-k-workers",                            topic: "Greedy" },
+  { num: 502,  name: "IPO",                                                    slug: "ipo",                                                       topic: "Greedy" },
+  { num: 373,  name: "Find K Pairs with Smallest Sums",                        slug: "find-k-pairs-with-smallest-sums",                           topic: "Greedy" },
+  { num: 215,  name: "Kth Largest Element in an Array",                        slug: "kth-largest-element-in-an-array",                           topic: "Greedy" },
+  { num: 347,  name: "Top K Frequent Elements",                                slug: "top-k-frequent-elements",                                   topic: "Greedy" },
+  { num: 1383, name: "Maximum Performance of a Team",                          slug: "maximum-performance-of-a-team",                             topic: "Greedy" },
+  { num: 1167, name: "Minimum Cost to Connect Sticks",                         slug: "minimum-cost-to-connect-sticks",                            topic: "Greedy" },
+  { num: 1338, name: "Reduce Array Size to The Half",                          slug: "reduce-array-size-to-the-half",                             topic: "Greedy" },
+  { num: 1642, name: "Furthest Building You Can Reach",                        slug: "furthest-building-you-can-reach",                           topic: "Greedy" },
+  { num: 1845, name: "Seat Reservation Manager",                               slug: "seat-reservation-manager",                                  topic: "Greedy" },
+  // Phase 6: Jump Game & Reachability
+  { num: 55,   name: "Jump Game",                                              slug: "jump-game",                                                 topic: "Greedy" },
+  { num: 45,   name: "Jump Game II",                                           slug: "jump-game-ii",                                              topic: "Greedy" },
+  { num: 1306, name: "Jump Game III",                                          slug: "jump-game-iii",                                             topic: "Greedy" },
+  { num: 1345, name: "Jump Game IV",                                           slug: "jump-game-iv",                                              topic: "Greedy" },
+  { num: 1340, name: "Jump Game V",                                            slug: "jump-game-v",                                               topic: "Greedy" },
+  { num: 1696, name: "Jump Game VI",                                           slug: "jump-game-vi",                                              topic: "Greedy" },
+  { num: 1871, name: "Jump Game VII",                                          slug: "jump-game-vii",                                             topic: "Greedy" },
+  { num: 1326, name: "Minimum Number of Taps to Open to Water a Garden",       slug: "minimum-number-of-taps-to-open-to-water-a-garden",          topic: "Greedy" },
+  // Phase 7: Stock Problems & State Transitions
+  { num: 121,  name: "Best Time to Buy and Sell Stock",                        slug: "best-time-to-buy-and-sell-stock",                           topic: "Greedy" },
+  { num: 122,  name: "Best Time to Buy and Sell Stock II",                     slug: "best-time-to-buy-and-sell-stock-ii",                        topic: "Greedy" },
+  { num: 714,  name: "Best Time to Buy and Sell Stock with Transaction Fee",   slug: "best-time-to-buy-and-sell-stock-with-transaction-fee",      topic: "Greedy" },
+  { num: 309,  name: "Best Time to Buy and Sell Stock with Cooldown",          slug: "best-time-to-buy-and-sell-stock-with-cooldown",             topic: "Greedy" },
+  { num: 376,  name: "Wiggle Subsequence",                                     slug: "wiggle-subsequence",                                        topic: "Greedy" },
+  { num: 53,   name: "Maximum Subarray",                                       slug: "maximum-subarray",                                          topic: "Greedy" },
+  { num: 918,  name: "Maximum Sum Circular Subarray",                          slug: "maximum-sum-circular-subarray",                             topic: "Greedy" },
+  // Phase 8: Advanced Greedy
+  { num: 406,  name: "Queue Reconstruction by Height",                         slug: "queue-reconstruction-by-height",                            topic: "Greedy" },
+  { num: 871,  name: "Minimum Number of Refueling Stops",                      slug: "minimum-number-of-refueling-stops",                         topic: "Greedy" },
+  { num: 330,  name: "Patching Array",                                         slug: "patching-array",                                            topic: "Greedy" },
+  { num: 321,  name: "Create Maximum Number",                                  slug: "create-maximum-number",                                     topic: "Greedy" },
+  { num: 546,  name: "Remove Boxes",                                           slug: "remove-boxes",                                              topic: "Greedy" },
+  { num: 632,  name: "Smallest Range Covering Elements from K Lists",          slug: "smallest-range-covering-elements-from-k-lists",             topic: "Greedy" },
+  { num: 870,  name: "Advantage Shuffle",                                      slug: "advantage-shuffle",                                         topic: "Greedy" },
+  { num: 846,  name: "Hand of Straights",                                      slug: "hand-of-straights",                                         topic: "Greedy" },
 ];
 
 // Deduplicate by slug (stable id)
@@ -643,15 +735,15 @@ export default function App() {
         .cb { width: 18px; height: 18px; border-radius: 4px; border: 1.5px solid #2e4060; background: transparent; cursor: pointer; flex-shrink: 0; margin-top: 3px; display: flex; align-items: center; justify-content: center; transition: all .12s; }
         .cb.checked { background: #1a4731; border-color: #3fb77a; }
         .btn { cursor: pointer; border-radius: 5px; font-family: inherit; font-size: 11px; padding: 4px 10px; transition: all .12s; white-space: nowrap; }
-        .btn-lc { background: transparent; color: #4e6280; border: 1px solid #222b3a; text-decoration: none; display: inline-flex; align-items: center; gap: 3px; }
+        .btn-lc { background: transparent; color: #d4dbe8; border: 1px solid #222b3a; text-decoration: none; display: inline-flex; align-items: center; gap: 3px; }
         .btn-lc:hover { color: #e8b84b; border-color: #6b4c1a; }
-        .btn-note { background: transparent; color: #4e6280; border: 1px solid #222b3a; }
+        .btn-note { background: transparent; color: #d4dbe8; border: 1px solid #222b3a; }
         .btn-note:hover { color: #9b8fef; border-color: #3d3470; }
         .btn-note.has-note { color: #9b8fef; border-color: #3d3470; }
         .chip { font-size: 10px; font-family: inherit; padding: 2px 7px; border-radius: 3px; border: 1px solid; font-weight: 600; letter-spacing: .3px; white-space: nowrap; }
-        .filter-btn { cursor: pointer; font-family: inherit; font-size: 11px; padding: 5px 13px; border-radius: 4px; border: 1px solid #222b3a; background: transparent; color: #4e6280; transition: all .12s; }
+        .filter-btn { cursor: pointer; font-family: inherit; font-size: 11px; padding: 5px 13px; border-radius: 4px; border: 1px solid #222b3a; background: transparent; color: #d4dbe8; transition: all .12s; }
         .filter-btn.active { color: #d4dbe8; border-color: #3a4a60; background: #1a2030; }
-        .tab-btn { cursor: pointer; font-family: inherit; font-size: 12px; padding: 7px 18px; border-radius: 5px; border: 1px solid #222b3a; background: transparent; color: #4e6280; transition: all .12s; letter-spacing: 1px; }
+        .tab-btn { cursor: pointer; font-family: inherit; font-size: 12px; padding: 7px 18px; border-radius: 5px; border: 1px solid #222b3a; background: transparent; color: #d4dbe8; transition: all .12s; letter-spacing: 1px; }
         .tab-btn.active { color: #d4dbe8; border-color: #3a4a60; background: #1a2030; }
         select { background: #181d28; border: 1px solid #222b3a; border-radius: 4px; color: #7a90b0; font-family: inherit; font-size: 11px; padding: 5px 10px; outline: none; cursor: pointer; }
         select:focus { border-color: #3a4a60; }
@@ -681,15 +773,21 @@ export default function App() {
         <div style={{ marginBottom: 28 }}>
           <div style={{ display: "flex", alignItems: "baseline", gap: 14, flexWrap: "wrap", marginBottom: 6 }}>
             <h1 style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700, fontSize: "clamp(22px,5vw,34px)", color: "#c8d4e8", letterSpacing: "-0.5px", lineHeight: 1 }}>
-              LeetCode Hard
+              Tushar Sharma Sheet
             </h1>
-            <span style={{ fontFamily: "'DM Mono'", fontSize: 11, color: "#2e4060", letterSpacing: "2px" }}>TRACKER</span>
+             <span style={{ fontFamily: "'DM Mono'", fontSize: 11, color: "#d4dbe8", letterSpacing: "2px" }}>TRACKER</span>
+            <a href="https://www.linkedin.com/in/tushar-sharma-702069305/" target="_blank" rel="noopener noreferrer" style={{ color: "#d4dbe8", textDecoration: "none", display: "flex", alignItems: "center", gap: 4 }}>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+            </a>
+           
           </div>
           <div style={{ display: "flex", alignItems: "center", gap: 20, flexWrap: "wrap", marginBottom: 14 }}>
-            <span style={{ fontSize: 11, color: "#2e4060" }}>{total} problems · codingMohan playlist</span>
+            <span style={{ fontSize: 11, color: "#d4dbe8" }}>{total} problems</span>
             <div style={{ display: "flex", gap: 18 }}>
-              <span style={{ fontSize: 13, color: "#3fb77a" }}><b style={{ fontFamily: "'Inter'", fontWeight: 700, fontSize: 20 }}>{solved}</b> <span style={{ color: "#2e4060", fontSize: 11 }}>solved</span></span>
-              <span style={{ fontSize: 13, color: "#4e6280" }}><b style={{ fontFamily: "'Inter'", fontWeight: 700, fontSize: 20 }}>{total - solved}</b> <span style={{ color: "#2e4060", fontSize: 11 }}>left</span></span>
+              <span style={{ fontSize: 13, color: "#3fb77a" }}><b style={{ fontFamily: "'Inter'", fontWeight: 700, fontSize: 20 }}>{solved}</b> <span style={{ color: "#d4dbe8", fontSize: 11 }}>solved</span></span>
+              <span style={{ fontSize: 13, color: "#4e6280" }}><b style={{ fontFamily: "'Inter'", fontWeight: 700, fontSize: 20 }}>{total - solved}</b> <span style={{ color: "#d4dbe8", fontSize: 11 }}>left</span></span>
               <span style={{ fontSize: 13, color: "#6b9bd2" }}><b style={{ fontFamily: "'Inter'", fontWeight: 700, fontSize: 20 }}>{pct}%</b></span>
             </div>
           </div>
@@ -716,14 +814,14 @@ export default function App() {
                 { label: "With Notes", val: Object.values(state).filter(v => v?.note).length, color: "#a78bfa" },
               ].map(({ label, val, color }) => (
                 <div key={label} style={{ background: "#181d28", border: "1px solid #1c2130", borderRadius: 8, padding: "14px 16px" }}>
-                  <div style={{ fontSize: 10, color: "#2e4060", letterSpacing: 1, marginBottom: 6 }}>{label.toUpperCase()}</div>
+                  <div style={{ fontSize: 10, color: "#d4dbe8", letterSpacing: 1, marginBottom: 6 }}>{label.toUpperCase()}</div>
                   <div style={{ fontFamily: "'Inter', sans-serif", fontSize: 28, color, fontWeight: 700 }}>{val}</div>
                 </div>
               ))}
             </div>
 
             {/* Topic breakdown */}
-            <div style={{ fontSize: 10, color: "#2e4060", letterSpacing: 2, marginBottom: 10 }}>TOPIC BREAKDOWN</div>
+            <div style={{ fontSize: 10, color: "#d4dbe8", letterSpacing: 2, marginBottom: 10 }}>TOPIC BREAKDOWN</div>
             <div style={{ border: "1px solid #1c2130", borderRadius: 8, overflow: "hidden", background: "#161b24" }}>
               {topicStats.map(({ topic, total: t, done, pct: tp }) => {
                 const ts = getStyle(topic);
@@ -733,7 +831,7 @@ export default function App() {
                     <div className="stat-bar-outer">
                       <div className="stat-bar-inner" style={{ width: `${tp}%`, background: `linear-gradient(90deg, ${ts.border}, ${ts.text})` }} />
                     </div>
-                    <span style={{ fontSize: 11, color: "#334155", minWidth: 60, textAlign: "right", fontVariantNumeric: "tabular-nums" }}>
+                    <span style={{ fontSize: 11, color: "#d4dbe8", minWidth: 60, textAlign: "right", fontVariantNumeric: "tabular-nums" }}>
                       {done}/{t} <span style={{ color: tp === 100 ? "#22c55e" : "#60a5fa" }}>({tp}%)</span>
                     </span>
                   </div>
@@ -742,16 +840,16 @@ export default function App() {
             </div>
 
             {/* Recently solved */}
-            <div style={{ fontSize: 10, color: "#2e4060", letterSpacing: 2, marginTop: 24, marginBottom: 10 }}>SOLVED PROBLEMS</div>
+            <div style={{ fontSize: 10, color: "#d4dbe8", letterSpacing: 2, marginTop: 24, marginBottom: 10 }}>SOLVED PROBLEMS</div>
             <div style={{ border: "1px solid #1c2130", borderRadius: 8, overflow: "hidden", background: "#161b24" }}>
               {PROBLEMS.filter(p => state[p.id]?.done).length === 0
-                ? <div style={{ padding: "32px 20px", textAlign: "center", color: "#2e4060", fontSize: 13 }}>no problems solved yet</div>
+                ? <div style={{ padding: "32px 20px", textAlign: "center", color: "#d4dbe8", fontSize: 13 }}>no problems solved yet</div>
                 : PROBLEMS.filter(p => state[p.id]?.done).slice(0, 50).map(p => {
                   const ts = getStyle(p.topic);
                   return (
                     <div key={p.id} className="stat-row">
                       <span style={{ fontSize: 10, color: "#22c55e", marginRight: 4 }}>✓</span>
-                      <span style={{ fontSize: 10, color: "#1e3a5f", minWidth: 34 }}>#{p.num}</span>
+                      <span style={{ fontSize: 10, color: "#d4dbe8", minWidth: 34 }}>#{p.num}</span>
                       <span style={{ flex: 1, fontSize: 12, color: "#8fa8bf" }}>{p.name}</span>
                       <span className="chip" style={{ background: ts.bg, borderColor: ts.border, color: ts.text }}>{p.topic}</span>
                     </div>
@@ -794,7 +892,7 @@ export default function App() {
                     </button>
                     <div style={{ flex: 1, minWidth: 0 }}>
                       <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap", marginBottom: 4 }}>
-                        <span style={{ fontSize: 10, color: "#2e4060", fontVariantNumeric: "tabular-nums", minWidth: 34 }}>#{p.num}</span>
+                        <span style={{ fontSize: 10, color: "#d4dbe8", fontVariantNumeric: "tabular-nums", minWidth: 34 }}>#{p.num}</span>
                         <span className={`prob-name${done ? " done" : ""}`}>{p.name}</span>
                       </div>
                       <div style={{ display: "flex", gap: 5, flexWrap: "wrap" }}>
@@ -802,7 +900,7 @@ export default function App() {
                         {hasNote && <span className="chip" style={{ background: "#15001a", borderColor: "#4c1d95", color: "#a78bfa" }}>note</span>}
                       </div>
                       {state[p.id]?.note && (
-                        <div style={{ marginTop: 7, fontSize: 11, color: "#4e6280", lineHeight: 1.6, whiteSpace: "pre-wrap", wordBreak: "break-word", borderLeft: "2px solid #1c2130", paddingLeft: 10 }}>
+                        <div style={{ marginTop: 7, fontSize: 11, color: "#d4dbe8", lineHeight: 1.6, whiteSpace: "pre-wrap", wordBreak: "break-word", borderLeft: "2px solid #1c2130", paddingLeft: 10 }}>
                           {state[p.id].note}
                         </div>
                       )}
@@ -824,7 +922,7 @@ export default function App() {
       {noteModal && (
         <div className="modal-bg" onClick={() => setNoteModal(null)}>
           <div className="modal" onClick={e => e.stopPropagation()}>
-            <div style={{ fontSize: 10, color: "#2e4060", marginBottom: 4, letterSpacing: 1 }}>NOTE</div>
+            <div style={{ fontSize: 10, color: "#d4dbe8", marginBottom: 4, letterSpacing: 1 }}>NOTE</div>
             <div style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700, fontSize: 15, color: "#c8d4e8", marginBottom: 14, lineHeight: 1.4 }}>
               #{noteModal.num} — {noteModal.name}
             </div>
