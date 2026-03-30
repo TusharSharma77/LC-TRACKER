@@ -689,10 +689,6 @@ export default function App() {
   const [search, setSearch] = useState("");
   const [statusFilter, setStatusFilter] = useState("all");
   const [topicFilter, setTopicFilter] = useState("all");
-  const [difficultyFilter, setDifficultyFilter] = useState("all");
-  const [groupByTopic, setGroupByTopic] = useState(false);
-  const [expandedTopics, setExpandedTopics] = useState(new Set());
-  const [randomProblem, setRandomProblem] = useState(null);
   const [noteModal, setNoteModal] = useState(null);
   const [noteDraft, setNoteDraft] = useState("");
   const [tab, setTab] = useState("problems"); // "problems" | "stats"
@@ -704,19 +700,6 @@ export default function App() {
   const toggle = id => setState(s => ({ ...s, [id]: { ...s[id], done: !s[id]?.done } }));
   const openNote = p => { setNoteModal(p); setNoteDraft(state[p.id]?.note || ""); };
   const saveNote = () => { setState(s => ({ ...s, [noteModal.id]: { ...s[noteModal.id], note: noteDraft } })); setNoteModal(null); };
-
-  const pickRandom = () => {
-    if (visible.length === 0) return;
-    const randomIndex = Math.floor(Math.random() * visible.length);
-    setRandomProblem(visible[randomIndex]);
-  };
-
-  const toggleTopic = topic => setExpandedTopics(s => {
-    const newSet = new Set(s);
-    if (newSet.has(topic)) newSet.delete(topic);
-    else newSet.add(topic);
-    return newSet;
-  });
 
   const solved = PROBLEMS.filter(p => state[p.id]?.done).length;
   const total = PROBLEMS.length;
@@ -731,20 +714,10 @@ export default function App() {
     if (statusFilter === "done") list = list.filter(p => state[p.id]?.done);
     if (statusFilter === "todo") list = list.filter(p => !state[p.id]?.done);
     if (topicFilter !== "all") list = list.filter(p => p.topic === topicFilter);
-    if (difficultyFilter !== "all") list = list.filter(p => p.difficulty === difficultyFilter);
     return list;
-  }, [search, statusFilter, topicFilter, difficultyFilter, state]);
+  }, [search, statusFilter, topicFilter, state]);
 
   const topicStats = useMemo(() => buildTopicStats(state), [state]);
-
-  const grouped = useMemo(() => {
-    const map = {};
-    for (const p of visible) {
-      if (!map[p.topic]) map[p.topic] = [];
-      map[p.topic].push(p);
-    }
-    return Object.entries(map).sort(([a], [b]) => a.localeCompare(b));
-  }, [visible]);
 
   return (
     <div style={{ minHeight: "100vh", background: "#13161c", fontFamily: "'DM Mono', 'Courier New', monospace", color: "#d4dbe8" }}>
@@ -900,125 +873,47 @@ export default function App() {
                   <option value="all">All Topics</option>
                   {ALL_TOPICS.map(t => <option key={t} value={t}>{t}</option>)}
                 </select>
-                <select value={difficultyFilter} onChange={e => setDifficultyFilter(e.target.value)}>
-                  <option value="all">All Difficulties</option>
-                  <option value="Easy">Easy</option>
-                  <option value="Medium">Medium</option>
-                  <option value="Hard">Hard</option>
-                </select>
-                <button className="filter-btn" onClick={() => setGroupByTopic(!groupByTopic)}>{groupByTopic ? "Ungroup" : "Group by Topic"}</button>
-                <button className="filter-btn" onClick={pickRandom}>Pick Random</button>
                 <span style={{ fontSize: 11, color: "#2e4060", marginLeft: "auto" }}>{visible.length} shown</span>
               </div>
             </div>
-
-            {randomProblem && (
-              <div style={{ background: "#1a2030", border: "1px solid #3a4a60", borderRadius: 8, padding: 16, marginBottom: 16 }}>
-                <div style={{ fontSize: 12, color: "#d4dbe8", marginBottom: 8 }}>🎲 Random Problem:</div>
-                <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                  <span style={{ fontSize: 14, color: "#d4dbe8" }}>#{randomProblem.num} — {randomProblem.name}</span>
-                  <span className="chip" style={{ background: getStyle(randomProblem.topic).bg, borderColor: getStyle(randomProblem.topic).border, color: getStyle(randomProblem.topic).text }}>{randomProblem.topic}</span>
-                  <span className="chip" style={{ background: randomProblem.difficulty === "Hard" ? "#1a0a0a" : "#0a1a0a", borderColor: randomProblem.difficulty === "Hard" ? "#7c2d12" : "#14532d", color: randomProblem.difficulty === "Hard" ? "#fdba74" : "#86efac" }}>{randomProblem.difficulty}</span>
-                  <a href={`https://leetcode.com/problems/${randomProblem.slug.replace(/-\d+$/, '')}/`} target="_blank" rel="noopener noreferrer" className="btn btn-lc" style={{ marginLeft: "auto" }}>
-                    Solve <svg width="8" height="8" viewBox="0 0 8 8"><path d="M1 7L7 1M7 1H3M7 1v4" stroke="currentColor" strokeWidth="1.2" fill="none" strokeLinecap="round"/></svg>
-                  </a>
-                </div>
-              </div>
-            )}
 
             <div style={{ border: "1px solid #1c2130", borderRadius: 8, overflow: "hidden", background: "#161b24" }}>
               {visible.length === 0 && (
                 <div style={{ padding: "48px 20px", textAlign: "center", color: "#2e4060", fontSize: 13 }}>no problems match</div>
               )}
-              {groupByTopic ? (
-                grouped.map(([topic, problems]) => {
-                  const ts = getStyle(topic);
-                  const isExpanded = expandedTopics.has(topic);
-                  return (
-                    <div key={topic}>
-                      <div
-                        className="stat-row"
-                        style={{ cursor: "pointer", borderBottom: isExpanded ? "1px solid #1c2130" : "none" }}
-                        onClick={() => toggleTopic(topic)}
-                      >
-                        <span style={{ fontSize: 12, color: ts.text, fontWeight: 600 }}>{topic}</span>
-                        <span style={{ fontSize: 11, color: "#d4dbe8", marginLeft: "auto" }}>{problems.length} problems</span>
-                        <svg width="12" height="12" viewBox="0 0 12 12" style={{ marginLeft: 8, transform: isExpanded ? "rotate(90deg)" : "rotate(0deg)", transition: "transform 0.2s" }}>
-                          <path d="M4 2l4 4-4 4" stroke="#d4dbe8" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
-                        </svg>
+              {visible.map((p, i) => {
+                const done = !!state[p.id]?.done;
+                const hasNote = !!state[p.id]?.note;
+                const ts = getStyle(p.topic);
+                return (
+                  <div key={p.id} className={`row${done ? " is-done" : ""} anim`} style={{ animationDelay: `${Math.min(i * 0.015, 0.3)}s` }}>
+                    <button className={`cb${done ? " checked" : ""}`} onClick={() => toggle(p.id)} title="toggle done">
+                      {done && <svg width="10" height="8" viewBox="0 0 10 8"><path d="M1 4l3 3 5-6" stroke="#22c55e" strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>}
+                    </button>
+                    <div style={{ flex: 1, minWidth: 0 }}>
+                      <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap", marginBottom: 4 }}>
+                        <span style={{ fontSize: 10, color: "#d4dbe8", fontVariantNumeric: "tabular-nums", minWidth: 34 }}>#{p.num}</span>
+                        <span className={`prob-name${done ? " done" : ""}`}>{p.name}</span>
                       </div>
-                      {isExpanded && problems.map((p, i) => {
-                        const done = !!state[p.id]?.done;
-                        const hasNote = !!state[p.id]?.note;
-                        return (
-                          <div key={p.id} className={`row${done ? " is-done" : ""} anim`} style={{ animationDelay: `${Math.min(i * 0.015, 0.3)}s` }}>
-                            <button className={`cb${done ? " checked" : ""}`} onClick={() => toggle(p.id)} title="toggle done">
-                              {done && <svg width="10" height="8" viewBox="0 0 10 8"><path d="M1 4l3 3 5-6" stroke="#22c55e" strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>}
-                            </button>
-                            <div style={{ flex: 1, minWidth: 0 }}>
-                              <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap", marginBottom: 4 }}>
-                                <span style={{ fontSize: 10, color: "#d4dbe8", fontVariantNumeric: "tabular-nums", minWidth: 34 }}>#{p.num}</span>
-                                <span className={`prob-name${done ? " done" : ""}`}>{p.name}</span>
-                              </div>
-                              <div style={{ display: "flex", gap: 5, flexWrap: "wrap" }}>
-                                <span className="chip" style={{ background: ts.bg, borderColor: ts.border, color: ts.text }}>{p.topic}</span>
-                                <span className="chip" style={{ background: p.difficulty === "Hard" ? "#1a0a0a" : "#0a1a0a", borderColor: p.difficulty === "Hard" ? "#7c2d12" : "#14532d", color: p.difficulty === "Hard" ? "#fdba74" : "#86efac" }}>{p.difficulty}</span>
-                                {hasNote && <span className="chip" style={{ background: "#15001a", borderColor: "#4c1d95", color: "#a78bfa" }}>note</span>}
-                              </div>
-                              {state[p.id]?.note && (
-                                <div style={{ marginTop: 7, fontSize: 11, color: "#d4dbe8", lineHeight: 1.6, whiteSpace: "pre-wrap", wordBreak: "break-word", borderLeft: "2px solid #1c2130", paddingLeft: 10 }}>
-                                  {state[p.id].note}
-                                </div>
-                              )}
-                            </div>
-                            <div style={{ display: "flex", gap: 5, flexShrink: 0, alignItems: "center", paddingTop: 1 }}>
-                              <a href={`https://leetcode.com/problems/${p.slug.replace(/-\d+$/, '')}/`} target="_blank" rel="noopener noreferrer" className="btn btn-lc" title="Open on LeetCode">
-                                LC <svg width="8" height="8" viewBox="0 0 8 8"><path d="M1 7L7 1M7 1H3M7 1v4" stroke="currentColor" strokeWidth="1.2" fill="none" strokeLinecap="round"/></svg>
-                              </a>
-                              <button className={`btn btn-note${hasNote ? " has-note" : ""}`} onClick={() => openNote(p)} title="Add note">✎</button>
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  );
-                })
-              ) : (
-                visible.map((p, i) => {
-                  const done = !!state[p.id]?.done;
-                  const hasNote = !!state[p.id]?.note;
-                  const ts = getStyle(p.topic);
-                  return (
-                    <div key={p.id} className={`row${done ? " is-done" : ""} anim`} style={{ animationDelay: `${Math.min(i * 0.015, 0.3)}s` }}>
-                      <button className={`cb${done ? " checked" : ""}`} onClick={() => toggle(p.id)} title="toggle done">
-                        {done && <svg width="10" height="8" viewBox="0 0 10 8"><path d="M1 4l3 3 5-6" stroke="#22c55e" strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>}
-                      </button>
-                      <div style={{ flex: 1, minWidth: 0 }}>
-                        <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap", marginBottom: 4 }}>
-                          <span style={{ fontSize: 10, color: "#d4dbe8", fontVariantNumeric: "tabular-nums", minWidth: 34 }}>#{p.num}</span>
-                          <span className={`prob-name${done ? " done" : ""}`}>{p.name}</span>
+                      <div style={{ display: "flex", gap: 5, flexWrap: "wrap" }}>
+                        <span className="chip" style={{ background: ts.bg, borderColor: ts.border, color: ts.text }}>{p.topic}</span>
+                        {hasNote && <span className="chip" style={{ background: "#15001a", borderColor: "#4c1d95", color: "#a78bfa" }}>note</span>}
+                      </div>
+                      {state[p.id]?.note && (
+                        <div style={{ marginTop: 7, fontSize: 11, color: "#d4dbe8", lineHeight: 1.6, whiteSpace: "pre-wrap", wordBreak: "break-word", borderLeft: "2px solid #1c2130", paddingLeft: 10 }}>
+                          {state[p.id].note}
                         </div>
-                        <div style={{ display: "flex", gap: 5, flexWrap: "wrap" }}>
-                          <span className="chip" style={{ background: ts.bg, borderColor: ts.border, color: ts.text }}>{p.topic}</span>
-                          <span className="chip" style={{ background: p.difficulty === "Hard" ? "#1a0a0a" : "#0a1a0a", borderColor: p.difficulty === "Hard" ? "#7c2d12" : "#14532d", color: p.difficulty === "Hard" ? "#fdba74" : "#86efac" }}>{p.difficulty}</span>
-                          {hasNote && <span className="chip" style={{ background: "#15001a", borderColor: "#4c1d95", color: "#a78bfa" }}>note</span>}
-                        </div>
-                        {state[p.id]?.note && (
-                          <div style={{ marginTop: 7, fontSize: 11, color: "#d4dbe8", lineHeight: 1.6, whiteSpace: "pre-wrap", wordBreak: "break-word", borderLeft: "2px solid #1c2130", paddingLeft: 10 }}>
-                            {state[p.id].note}
-                          </div>
-                        )}
-                      </div>
-                      <div style={{ display: "flex", gap: 5, flexShrink: 0, alignItems: "center", paddingTop: 1 }}>
-                        <a href={`https://leetcode.com/problems/${p.slug.replace(/-\d+$/, '')}/`} target="_blank" rel="noopener noreferrer" className="btn btn-lc" title="Open on LeetCode">
-                          LC <svg width="8" height="8" viewBox="0 0 8 8"><path d="M1 7L7 1M7 1H3M7 1v4" stroke="currentColor" strokeWidth="1.2" fill="none" strokeLinecap="round"/></svg>
-                        </a>
-                        <button className={`btn btn-note${hasNote ? " has-note" : ""}`} onClick={() => openNote(p)} title="Add note">✎</button>
-                      </div>
+                      )}
                     </div>
-                  );
-                })
-              )}
+                    <div style={{ display: "flex", gap: 5, flexShrink: 0, alignItems: "center", paddingTop: 1 }}>
+                      <a href={`https://leetcode.com/problems/${p.slug.replace(/-\d+$/, '')}/`} target="_blank" rel="noopener noreferrer" className="btn btn-lc" title="Open on LeetCode">
+                        LC <svg width="8" height="8" viewBox="0 0 8 8"><path d="M1 7L7 1M7 1H3M7 1v4" stroke="currentColor" strokeWidth="1.2" fill="none" strokeLinecap="round"/></svg>
+                      </a>
+                      <button className={`btn btn-note${hasNote ? " has-note" : ""}`} onClick={() => openNote(p)} title="Add note">✎</button>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </>
         )}

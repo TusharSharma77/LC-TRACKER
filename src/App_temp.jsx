@@ -54,15 +54,15 @@ const PROBLEMS_RAW = [
   { num: 2426,  name: "Number of Pairs Satisfying Inequality",                   slug: "number-of-pairs-satisfying-inequality",                      topic: "BIT", difficulty: "Hard" },
   { num: 2430,  name: "Maximum Deletions on a String",                           slug: "maximum-deletions-on-a-string",                              topic: "DP", difficulty: "Hard" },
   { num: 2435,  name: "Paths in Matrix Whose Sum Is Divisible by K",             slug: "paths-in-matrix-whose-sum-is-divisible-by-k",               topic: "DP", difficulty: "Hard" },
-  { num: 2439,  name: "Minimize Maximum of Array",                               slug: "minimize-maximum-of-array",                                  topic: "Binary Search", difficulty: "Medium" },
-  { num: 2440,  name: "Create Components With Same Value",                       slug: "create-components-with-same-value",                          topic: "Tree", difficulty: "Medium" },
+  { num: 2439,  name: "Minimize Maximum of Array",                               slug: "minimize-maximum-of-array",                                  topic: "Binary Search", difficulty: "Hard" },
+  { num: 2440,  name: "Create Components With Same Value",                       slug: "create-components-with-same-value",                          topic: "Tree", difficulty: "Hard" },
   { num: 2444,  name: "Count Subarrays With Fixed Bounds",                       slug: "count-subarrays-with-fixed-bounds",                          topic: "Sliding Window", difficulty: "Hard" },
-  { num: 2448,  name: "Minimum Cost to Make Array Equal",                        slug: "minimum-cost-to-make-array-equal",                           topic: "Binary Search", difficulty: "Medium" },
+  { num: 2448,  name: "Minimum Cost to Make Array Equal",                        slug: "minimum-cost-to-make-array-equal",                           topic: "Binary Search", difficulty: "Hard" },
   { num: 2449,  name: "Minimum Number of Operations to Make Arrays Similar",     slug: "minimum-number-of-operations-to-make-arrays-similar",       topic: "Greedy", difficulty: "Hard" },
   { num: 2454,  name: "Next Greater Element IV",                                 slug: "next-greater-element-iv",                                    topic: "Stack", difficulty: "Hard" },
   { num: 2458,  name: "Height of Binary Tree After Subtree Removal Queries",     slug: "height-of-binary-tree-after-subtree-removal-queries",        topic: "Tree", difficulty: "Hard" },
   { num: 2463,  name: "Minimum Total Distance Traveled",                         slug: "minimum-total-distance-traveled",                            topic: "DP", difficulty: "Hard" },
-  { num: 2467,  name: "Most Profitable Path in a Tree",                          slug: "most-profitable-path-in-a-tree",                             topic: "Tree", difficulty: "Medium" },
+  { num: 2467,  name: "Most Profitable Path in a Tree",                          slug: "most-profitable-path-in-a-tree",                             topic: "Tree", difficulty: "Hard" },
   { num: 2468,  name: "Split Message Based on Limit",                            slug: "split-message-based-on-limit",                               topic: "Binary Search", difficulty: "Hard" },
   { num: 2472,  name: "Maximum Number of Non-overlapping Palindrome Substrings", slug: "maximum-number-of-non-overlapping-palindrome-substrings",    topic: "DP", difficulty: "Hard" },
   { num: 2478,  name: "Number of Beautiful Partitions",                          slug: "number-of-beautiful-partitions",                             topic: "DP", difficulty: "Hard" },
@@ -70,11 +70,11 @@ const PROBLEMS_RAW = [
   { num: 2488,  name: "Count Subarrays With Median K",                           slug: "count-subarrays-with-median-k",                              topic: "Hashing", difficulty: "Hard" },
   { num: 2493,  name: "Divide Nodes Into the Maximum Number of Groups",          slug: "divide-nodes-into-the-maximum-number-of-groups",             topic: "Graph", difficulty: "Hard" },
   { num: 2499,  name: "Minimum Total Cost to Make Arrays Unequal",              slug: "minimum-total-cost-to-make-arrays-unequal",                  topic: "Greedy", difficulty: "Hard" },
-  { num: 2502,  name: "Design Memory Allocator",                                 slug: "design-memory-allocator",                                    topic: "Design", difficulty: "Medium" },
+  { num: 2502,  name: "Design Memory Allocator",                                 slug: "design-memory-allocator",                                    topic: "Design", difficulty: "Hard" },
   { num: 2503,  name: "Maximum Number of Points From Grid Queries",              slug: "maximum-number-of-points-from-grid-queries",                 topic: "BFS", difficulty: "Hard" },
   { num: 2508,  name: "Add Edges to Make Degrees of All Nodes Even",             slug: "add-edges-to-make-degrees-of-all-nodes-even",                topic: "Graph", difficulty: "Hard" },
   { num: 2509,  name: "Cycle Length Queries in a Tree",                          slug: "cycle-length-queries-in-a-tree",                             topic: "Tree", difficulty: "Hard" },
-  { num: 2513,  name: "Minimize the Maximum of Two Arrays",                      slug: "minimize-the-maximum-of-two-arrays",                         topic: "Binary Search", difficulty: "Medium" },
+  { num: 2513,  name: "Minimize the Maximum of Two Arrays",                      slug: "minimize-the-maximum-of-two-arrays",                         topic: "Binary Search", difficulty: "Hard" },
   { num: 2514,  name: "Count Anagrams",                                          slug: "count-anagrams",                                             topic: "Math", difficulty: "Hard" },
   { num: 2520,  name: "Number of Great Partitions",                              slug: "number-of-great-partitions",                                 topic: "Math", difficulty: "Hard" },
   { num: 2528,  name: "Maximize the Minimum Powered City",                       slug: "maximize-the-minimum-powered-city",                          topic: "Binary Search", difficulty: "Hard" },
@@ -82,22 +82,22 @@ const PROBLEMS_RAW = [
   { num: 2537,  name: "Count the Number of Good Subarrays",                      slug: "count-the-number-of-good-subarrays",                         topic: "Sliding Window", difficulty: "Hard" },
   { num: 2538,  name: "Difference Between Maximum and Minimum Price Sum",        slug: "difference-between-maximum-and-minimum-price-sum",           topic: "Tree", difficulty: "Hard" },
   { num: 2542,  name: "Maximum Subsequence Score",                               slug: "maximum-subsequence-score",                                  topic: "Heap", difficulty: "Hard" },
-  { num: 2543,  name: "Check if Point Is Reachable",                             slug: "check-if-point-is-reachable",                                topic: "Math", difficulty: "Medium" },
+  { num: 2543,  name: "Check if Point Is Reachable",                             slug: "check-if-point-is-reachable",                                topic: "Math", difficulty: "Hard" },
   { num: 2547,  name: "Minimum Cost to Split an Array",                          slug: "minimum-cost-to-split-an-array",                             topic: "DP", difficulty: "Hard" },
   { num: 2551,  name: "Put Marbles in Bags",                                     slug: "put-marbles-in-bags",                                        topic: "Greedy", difficulty: "Hard" },
   { num: 2552,  name: "Count Increasing Quadruplets",                            slug: "count-increasing-quadruplets",                               topic: "DP", difficulty: "Hard" },
   { num: 2555,  name: "Maximize Win From Two Segments",                          slug: "maximize-win-from-two-segments",                             topic: "Sliding Window", difficulty: "Hard" },
   { num: 2561,  name: "Rearranging Fruits",                                      slug: "rearranging-fruits",                                         topic: "Greedy", difficulty: "Hard" },
   { num: 2565,  name: "Subsequence With the Minimum Score",                      slug: "subsequence-with-the-minimum-score",                         topic: "Binary Search", difficulty: "Hard" },
-  { num: 2572,  name: "Count the Number of Square-Free Subsets",                 slug: "count-the-number-of-square-free-subsets",                    topic: "Bitmask DP", difficulty: "Medium" },
+  { num: 2572,  name: "Count the Number of Square-Free Subsets",                 slug: "count-the-number-of-square-free-subsets",                    topic: "Bitmask DP", difficulty: "Hard" },
   { num: 2573,  name: "Find the String with LCP",                                slug: "find-the-string-with-lcp",                                   topic: "String", difficulty: "Hard" },
   { num: 2577,  name: "Minimum Time to Visit a Cell In a Grid",                  slug: "minimum-time-to-visit-a-cell-in-a-grid",                     topic: "BFS", difficulty: "Hard" },
   { num: 2581,  name: "Count Number of Possible Root Nodes",                     slug: "count-number-of-possible-root-nodes",                        topic: "Tree", difficulty: "Hard" },
-  { num: 2584,  name: "Split the Array to Make Coprime Products",                slug: "split-the-array-to-make-coprime-products",                   topic: "Math", difficulty: "Medium" },
+  { num: 2584,  name: "Split the Array to Make Coprime Products",                slug: "split-the-array-to-make-coprime-products",                   topic: "Math", difficulty: "Hard" },
   { num: 2585,  name: "Number of Ways to Earn Points",                           slug: "number-of-ways-to-earn-points",                              topic: "DP", difficulty: "Hard" },
   { num: 2588,  name: "Count the Number of Beautiful Subarrays",                 slug: "count-the-number-of-beautiful-subarrays",                    topic: "Bit Manipulation", difficulty: "Hard" },
   { num: 2589,  name: "Minimum Time to Complete All Tasks",                      slug: "minimum-time-to-complete-all-tasks",                         topic: "Greedy", difficulty: "Hard" },
-  { num: 2597,  name: "The Number of Beautiful Subsets",                         slug: "the-number-of-beautiful-subsets",                            topic: "DP", difficulty: "Medium" },
+  { num: 2597,  name: "The Number of Beautiful Subsets",                         slug: "the-number-of-beautiful-subsets",                            topic: "DP", difficulty: "Hard" },
   { num: 2598,  name: "Smallest Missing Non-negative Integer After Operations",  slug: "smallest-missing-non-negative-integer-after-operations",     topic: "Math", difficulty: "Hard" },
   { num: 2603,  name: "Collect Coins in a Tree",                                 slug: "collect-coins-in-a-tree",                                    topic: "Tree", difficulty: "Hard" },
   { num: 2607,  name: "Make K-Subarray Sums Equal",                              slug: "make-k-subarray-sums-equal",                                 topic: "Math", difficulty: "Hard" },
@@ -285,7 +285,7 @@ const PROBLEMS_RAW = [
   { num: 41,   name: "First Missing Positive",                                   slug: "first-missing-positive",                                     topic: "Array", difficulty: "Hard" },
   { num: 42,   name: "Trapping Rain Water",                                      slug: "trapping-rain-water",                                        topic: "Stack", difficulty: "Hard" },
   { num: 44,   name: "Wildcard Matching",                                        slug: "wildcard-matching",                                          topic: "DP", difficulty: "Hard" },
-  { num: 60,   name: "Permutation Sequence",                                     slug: "permutation-sequence",                                       topic: "Math", difficulty: "Medium" },
+  { num: 60,   name: "Permutation Sequence",                                     slug: "permutation-sequence",                                       topic: "Math", difficulty: "Hard" },
   { num: 76,   name: "Minimum Window Substring",                                 slug: "minimum-window-substring",                                   topic: "Sliding Window", difficulty: "Hard" },
   { num: 84,   name: "Largest Rectangle in Histogram",                           slug: "largest-rectangle-in-histogram",                             topic: "Stack", difficulty: "Hard" },
   { num: 115,  name: "Distinct Subsequences",                                    slug: "distinct-subsequences",                                      topic: "DP", difficulty: "Hard" },
@@ -293,7 +293,7 @@ const PROBLEMS_RAW = [
   { num: 124,  name: "Binary Tree Maximum Path Sum",                             slug: "binary-tree-maximum-path-sum",                               topic: "Tree", difficulty: "Hard" },
   { num: 126,  name: "Word Ladder II",                                           slug: "word-ladder-ii",                                             topic: "BFS", difficulty: "Hard" },
   { num: 132,  name: "Palindrome Partitioning II",                               slug: "palindrome-partitioning-ii",                                 topic: "DP", difficulty: "Hard" },
-  { num: 134,  name: "Gas Station",                                              slug: "gas-station",                                                topic: "Greedy", difficulty: "Medium" },
+  { num: 134,  name: "Gas Station",                                              slug: "gas-station",                                                topic: "Greedy", difficulty: "Hard" },
   { num: 135,  name: "Candy",                                                    slug: "candy",                                                      topic: "Greedy", difficulty: "Hard" },
   { num: 140,  name: "Word Break II",                                            slug: "word-break-ii",                                              topic: "DP", difficulty: "Hard" },
   { num: 149,  name: "Max Points on a Line",                                     slug: "max-points-on-a-line",                                       topic: "Math", difficulty: "Hard" },
@@ -689,10 +689,6 @@ export default function App() {
   const [search, setSearch] = useState("");
   const [statusFilter, setStatusFilter] = useState("all");
   const [topicFilter, setTopicFilter] = useState("all");
-  const [difficultyFilter, setDifficultyFilter] = useState("all");
-  const [groupByTopic, setGroupByTopic] = useState(false);
-  const [expandedTopics, setExpandedTopics] = useState(new Set());
-  const [randomProblem, setRandomProblem] = useState(null);
   const [noteModal, setNoteModal] = useState(null);
   const [noteDraft, setNoteDraft] = useState("");
   const [tab, setTab] = useState("problems"); // "problems" | "stats"
@@ -704,19 +700,6 @@ export default function App() {
   const toggle = id => setState(s => ({ ...s, [id]: { ...s[id], done: !s[id]?.done } }));
   const openNote = p => { setNoteModal(p); setNoteDraft(state[p.id]?.note || ""); };
   const saveNote = () => { setState(s => ({ ...s, [noteModal.id]: { ...s[noteModal.id], note: noteDraft } })); setNoteModal(null); };
-
-  const pickRandom = () => {
-    if (visible.length === 0) return;
-    const randomIndex = Math.floor(Math.random() * visible.length);
-    setRandomProblem(visible[randomIndex]);
-  };
-
-  const toggleTopic = topic => setExpandedTopics(s => {
-    const newSet = new Set(s);
-    if (newSet.has(topic)) newSet.delete(topic);
-    else newSet.add(topic);
-    return newSet;
-  });
 
   const solved = PROBLEMS.filter(p => state[p.id]?.done).length;
   const total = PROBLEMS.length;
@@ -731,20 +714,10 @@ export default function App() {
     if (statusFilter === "done") list = list.filter(p => state[p.id]?.done);
     if (statusFilter === "todo") list = list.filter(p => !state[p.id]?.done);
     if (topicFilter !== "all") list = list.filter(p => p.topic === topicFilter);
-    if (difficultyFilter !== "all") list = list.filter(p => p.difficulty === difficultyFilter);
     return list;
-  }, [search, statusFilter, topicFilter, difficultyFilter, state]);
+  }, [search, statusFilter, topicFilter, state]);
 
   const topicStats = useMemo(() => buildTopicStats(state), [state]);
-
-  const grouped = useMemo(() => {
-    const map = {};
-    for (const p of visible) {
-      if (!map[p.topic]) map[p.topic] = [];
-      map[p.topic].push(p);
-    }
-    return Object.entries(map).sort(([a], [b]) => a.localeCompare(b));
-  }, [visible]);
 
   return (
     <div style={{ minHeight: "100vh", background: "#13161c", fontFamily: "'DM Mono', 'Courier New', monospace", color: "#d4dbe8" }}>
@@ -900,125 +873,47 @@ export default function App() {
                   <option value="all">All Topics</option>
                   {ALL_TOPICS.map(t => <option key={t} value={t}>{t}</option>)}
                 </select>
-                <select value={difficultyFilter} onChange={e => setDifficultyFilter(e.target.value)}>
-                  <option value="all">All Difficulties</option>
-                  <option value="Easy">Easy</option>
-                  <option value="Medium">Medium</option>
-                  <option value="Hard">Hard</option>
-                </select>
-                <button className="filter-btn" onClick={() => setGroupByTopic(!groupByTopic)}>{groupByTopic ? "Ungroup" : "Group by Topic"}</button>
-                <button className="filter-btn" onClick={pickRandom}>Pick Random</button>
                 <span style={{ fontSize: 11, color: "#2e4060", marginLeft: "auto" }}>{visible.length} shown</span>
               </div>
             </div>
-
-            {randomProblem && (
-              <div style={{ background: "#1a2030", border: "1px solid #3a4a60", borderRadius: 8, padding: 16, marginBottom: 16 }}>
-                <div style={{ fontSize: 12, color: "#d4dbe8", marginBottom: 8 }}>🎲 Random Problem:</div>
-                <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                  <span style={{ fontSize: 14, color: "#d4dbe8" }}>#{randomProblem.num} — {randomProblem.name}</span>
-                  <span className="chip" style={{ background: getStyle(randomProblem.topic).bg, borderColor: getStyle(randomProblem.topic).border, color: getStyle(randomProblem.topic).text }}>{randomProblem.topic}</span>
-                  <span className="chip" style={{ background: randomProblem.difficulty === "Hard" ? "#1a0a0a" : "#0a1a0a", borderColor: randomProblem.difficulty === "Hard" ? "#7c2d12" : "#14532d", color: randomProblem.difficulty === "Hard" ? "#fdba74" : "#86efac" }}>{randomProblem.difficulty}</span>
-                  <a href={`https://leetcode.com/problems/${randomProblem.slug.replace(/-\d+$/, '')}/`} target="_blank" rel="noopener noreferrer" className="btn btn-lc" style={{ marginLeft: "auto" }}>
-                    Solve <svg width="8" height="8" viewBox="0 0 8 8"><path d="M1 7L7 1M7 1H3M7 1v4" stroke="currentColor" strokeWidth="1.2" fill="none" strokeLinecap="round"/></svg>
-                  </a>
-                </div>
-              </div>
-            )}
 
             <div style={{ border: "1px solid #1c2130", borderRadius: 8, overflow: "hidden", background: "#161b24" }}>
               {visible.length === 0 && (
                 <div style={{ padding: "48px 20px", textAlign: "center", color: "#2e4060", fontSize: 13 }}>no problems match</div>
               )}
-              {groupByTopic ? (
-                grouped.map(([topic, problems]) => {
-                  const ts = getStyle(topic);
-                  const isExpanded = expandedTopics.has(topic);
-                  return (
-                    <div key={topic}>
-                      <div
-                        className="stat-row"
-                        style={{ cursor: "pointer", borderBottom: isExpanded ? "1px solid #1c2130" : "none" }}
-                        onClick={() => toggleTopic(topic)}
-                      >
-                        <span style={{ fontSize: 12, color: ts.text, fontWeight: 600 }}>{topic}</span>
-                        <span style={{ fontSize: 11, color: "#d4dbe8", marginLeft: "auto" }}>{problems.length} problems</span>
-                        <svg width="12" height="12" viewBox="0 0 12 12" style={{ marginLeft: 8, transform: isExpanded ? "rotate(90deg)" : "rotate(0deg)", transition: "transform 0.2s" }}>
-                          <path d="M4 2l4 4-4 4" stroke="#d4dbe8" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
-                        </svg>
+              {visible.map((p, i) => {
+                const done = !!state[p.id]?.done;
+                const hasNote = !!state[p.id]?.note;
+                const ts = getStyle(p.topic);
+                return (
+                  <div key={p.id} className={`row${done ? " is-done" : ""} anim`} style={{ animationDelay: `${Math.min(i * 0.015, 0.3)}s` }}>
+                    <button className={`cb${done ? " checked" : ""}`} onClick={() => toggle(p.id)} title="toggle done">
+                      {done && <svg width="10" height="8" viewBox="0 0 10 8"><path d="M1 4l3 3 5-6" stroke="#22c55e" strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>}
+                    </button>
+                    <div style={{ flex: 1, minWidth: 0 }}>
+                      <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap", marginBottom: 4 }}>
+                        <span style={{ fontSize: 10, color: "#d4dbe8", fontVariantNumeric: "tabular-nums", minWidth: 34 }}>#{p.num}</span>
+                        <span className={`prob-name${done ? " done" : ""}`}>{p.name}</span>
                       </div>
-                      {isExpanded && problems.map((p, i) => {
-                        const done = !!state[p.id]?.done;
-                        const hasNote = !!state[p.id]?.note;
-                        return (
-                          <div key={p.id} className={`row${done ? " is-done" : ""} anim`} style={{ animationDelay: `${Math.min(i * 0.015, 0.3)}s` }}>
-                            <button className={`cb${done ? " checked" : ""}`} onClick={() => toggle(p.id)} title="toggle done">
-                              {done && <svg width="10" height="8" viewBox="0 0 10 8"><path d="M1 4l3 3 5-6" stroke="#22c55e" strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>}
-                            </button>
-                            <div style={{ flex: 1, minWidth: 0 }}>
-                              <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap", marginBottom: 4 }}>
-                                <span style={{ fontSize: 10, color: "#d4dbe8", fontVariantNumeric: "tabular-nums", minWidth: 34 }}>#{p.num}</span>
-                                <span className={`prob-name${done ? " done" : ""}`}>{p.name}</span>
-                              </div>
-                              <div style={{ display: "flex", gap: 5, flexWrap: "wrap" }}>
-                                <span className="chip" style={{ background: ts.bg, borderColor: ts.border, color: ts.text }}>{p.topic}</span>
-                                <span className="chip" style={{ background: p.difficulty === "Hard" ? "#1a0a0a" : "#0a1a0a", borderColor: p.difficulty === "Hard" ? "#7c2d12" : "#14532d", color: p.difficulty === "Hard" ? "#fdba74" : "#86efac" }}>{p.difficulty}</span>
-                                {hasNote && <span className="chip" style={{ background: "#15001a", borderColor: "#4c1d95", color: "#a78bfa" }}>note</span>}
-                              </div>
-                              {state[p.id]?.note && (
-                                <div style={{ marginTop: 7, fontSize: 11, color: "#d4dbe8", lineHeight: 1.6, whiteSpace: "pre-wrap", wordBreak: "break-word", borderLeft: "2px solid #1c2130", paddingLeft: 10 }}>
-                                  {state[p.id].note}
-                                </div>
-                              )}
-                            </div>
-                            <div style={{ display: "flex", gap: 5, flexShrink: 0, alignItems: "center", paddingTop: 1 }}>
-                              <a href={`https://leetcode.com/problems/${p.slug.replace(/-\d+$/, '')}/`} target="_blank" rel="noopener noreferrer" className="btn btn-lc" title="Open on LeetCode">
-                                LC <svg width="8" height="8" viewBox="0 0 8 8"><path d="M1 7L7 1M7 1H3M7 1v4" stroke="currentColor" strokeWidth="1.2" fill="none" strokeLinecap="round"/></svg>
-                              </a>
-                              <button className={`btn btn-note${hasNote ? " has-note" : ""}`} onClick={() => openNote(p)} title="Add note">✎</button>
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  );
-                })
-              ) : (
-                visible.map((p, i) => {
-                  const done = !!state[p.id]?.done;
-                  const hasNote = !!state[p.id]?.note;
-                  const ts = getStyle(p.topic);
-                  return (
-                    <div key={p.id} className={`row${done ? " is-done" : ""} anim`} style={{ animationDelay: `${Math.min(i * 0.015, 0.3)}s` }}>
-                      <button className={`cb${done ? " checked" : ""}`} onClick={() => toggle(p.id)} title="toggle done">
-                        {done && <svg width="10" height="8" viewBox="0 0 10 8"><path d="M1 4l3 3 5-6" stroke="#22c55e" strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>}
-                      </button>
-                      <div style={{ flex: 1, minWidth: 0 }}>
-                        <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap", marginBottom: 4 }}>
-                          <span style={{ fontSize: 10, color: "#d4dbe8", fontVariantNumeric: "tabular-nums", minWidth: 34 }}>#{p.num}</span>
-                          <span className={`prob-name${done ? " done" : ""}`}>{p.name}</span>
+                      <div style={{ display: "flex", gap: 5, flexWrap: "wrap" }}>
+                        <span className="chip" style={{ background: ts.bg, borderColor: ts.border, color: ts.text }}>{p.topic}</span>
+                        {hasNote && <span className="chip" style={{ background: "#15001a", borderColor: "#4c1d95", color: "#a78bfa" }}>note</span>}
+                      </div>
+                      {state[p.id]?.note && (
+                        <div style={{ marginTop: 7, fontSize: 11, color: "#d4dbe8", lineHeight: 1.6, whiteSpace: "pre-wrap", wordBreak: "break-word", borderLeft: "2px solid #1c2130", paddingLeft: 10 }}>
+                          {state[p.id].note}
                         </div>
-                        <div style={{ display: "flex", gap: 5, flexWrap: "wrap" }}>
-                          <span className="chip" style={{ background: ts.bg, borderColor: ts.border, color: ts.text }}>{p.topic}</span>
-                          <span className="chip" style={{ background: p.difficulty === "Hard" ? "#1a0a0a" : "#0a1a0a", borderColor: p.difficulty === "Hard" ? "#7c2d12" : "#14532d", color: p.difficulty === "Hard" ? "#fdba74" : "#86efac" }}>{p.difficulty}</span>
-                          {hasNote && <span className="chip" style={{ background: "#15001a", borderColor: "#4c1d95", color: "#a78bfa" }}>note</span>}
-                        </div>
-                        {state[p.id]?.note && (
-                          <div style={{ marginTop: 7, fontSize: 11, color: "#d4dbe8", lineHeight: 1.6, whiteSpace: "pre-wrap", wordBreak: "break-word", borderLeft: "2px solid #1c2130", paddingLeft: 10 }}>
-                            {state[p.id].note}
-                          </div>
-                        )}
-                      </div>
-                      <div style={{ display: "flex", gap: 5, flexShrink: 0, alignItems: "center", paddingTop: 1 }}>
-                        <a href={`https://leetcode.com/problems/${p.slug.replace(/-\d+$/, '')}/`} target="_blank" rel="noopener noreferrer" className="btn btn-lc" title="Open on LeetCode">
-                          LC <svg width="8" height="8" viewBox="0 0 8 8"><path d="M1 7L7 1M7 1H3M7 1v4" stroke="currentColor" strokeWidth="1.2" fill="none" strokeLinecap="round"/></svg>
-                        </a>
-                        <button className={`btn btn-note${hasNote ? " has-note" : ""}`} onClick={() => openNote(p)} title="Add note">✎</button>
-                      </div>
+                      )}
                     </div>
-                  );
-                })
-              )}
+                    <div style={{ display: "flex", gap: 5, flexShrink: 0, alignItems: "center", paddingTop: 1 }}>
+                      <a href={`https://leetcode.com/problems/${p.slug.replace(/-\d+$/, '')}/`} target="_blank" rel="noopener noreferrer" className="btn btn-lc" title="Open on LeetCode">
+                        LC <svg width="8" height="8" viewBox="0 0 8 8"><path d="M1 7L7 1M7 1H3M7 1v4" stroke="currentColor" strokeWidth="1.2" fill="none" strokeLinecap="round"/></svg>
+                      </a>
+                      <button className={`btn btn-note${hasNote ? " has-note" : ""}`} onClick={() => openNote(p)} title="Add note">✎</button>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </>
         )}
