@@ -709,7 +709,7 @@ export default function App() {
   const pct = total > 0 ? Math.round((solved / total) * 100) : 0;
 
   const visible = useMemo(() => {
-    let list = PROBLEMS;
+    let list = [...PROBLEMS];
     if (search.trim()) {
       const q = search.toLowerCase();
       list = list.filter(p => p.name.toLowerCase().includes(q) || String(p.num).includes(q));
@@ -718,6 +718,13 @@ export default function App() {
     if (statusFilter === "todo") list = list.filter(p => !state[p.id]?.done);
     if (topicFilter !== "all") list = list.filter(p => p.topic === topicFilter);
     if (difficultyFilter !== "all") list = list.filter(p => p.difficulty === difficultyFilter);
+
+    list.sort((a, b) => {
+      const aDone = state[a.id]?.done ? 1 : 0;
+      const bDone = state[b.id]?.done ? 1 : 0;
+      return aDone - bDone;
+    });
+
     return list;
   }, [search, statusFilter, topicFilter, difficultyFilter, state]);
 
@@ -818,7 +825,7 @@ export default function App() {
         {tab === "topics" && (
           <div className="anim">
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
-              <div style={{ fontSize: 13, color: "#d4dbe8" }}>Select a topic to jump to questions:</div>
+              <div style={{ fontSize: 13, color: "#d4dbe8" }}>Select a topic to view its questions:</div>
               <button className="filter-btn" onClick={pickRandom} style={{ background: "linear-gradient(45deg, #182540, #2e4060)", borderColor: "#4e6280", fontWeight: "bold", padding: "8px 16px" }}>🎲 Pick Random</button>
             </div>
             
@@ -829,11 +836,8 @@ export default function App() {
                   <button 
                     key={topic}
                     onClick={() => {
-                      const el = document.getElementById(`topic-section-${topic}`);
-                      if (el) {
-                        const y = el.getBoundingClientRect().top + window.scrollY - 20;
-                        window.scrollTo({ top: y, behavior: 'smooth' });
-                      }
+                      setTopicFilter(topic);
+                      setTab("problems");
                     }}
                     style={{
                       background: ts.bg, border: `1px solid ${ts.border}`, borderRadius: 8, padding: "12px", 
@@ -862,55 +866,6 @@ export default function App() {
                 </div>
               </div>
             )}
-
-            <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
-              {grouped.map(([topic, problems]) => {
-                const ts = getStyle(topic);
-                const doneCount = problems.filter(p => state[p.id]?.done).length;
-                return (
-                  <div key={topic} id={`topic-section-${topic}`} style={{ background: "#161b24", border: "1px solid #1c2130", borderRadius: 8, overflow: "hidden" }}>
-                    <div style={{ padding: "12px 16px", background: ts.bg, borderBottom: `1px solid ${ts.border}`, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                      <span style={{ color: ts.text, fontWeight: "bold", fontSize: 14 }}>{topic}</span>
-                      <span style={{ fontSize: 11, color: "#d4dbe8" }}>{doneCount} / {problems.length} solved</span>
-                    </div>
-                    <div>
-                      {problems.map((p, i) => {
-                        const done = !!state[p.id]?.done;
-                        const hasNote = !!state[p.id]?.note;
-                        return (
-                          <div key={p.id} className={`row${done ? " is-done" : ""} anim`} style={{ animationDelay: `${Math.min(i * 0.015, 0.3)}s` }}>
-                            <button className={`cb${done ? " checked" : ""}`} onClick={() => toggle(p.id)} title="toggle done">
-                              {done && <svg width="10" height="8" viewBox="0 0 10 8"><path d="M1 4l3 3 5-6" stroke="#22c55e" strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>}
-                            </button>
-                            <div style={{ flex: 1, minWidth: 0 }}>
-                              <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap", marginBottom: 4 }}>
-                                <span style={{ fontSize: 10, color: "#d4dbe8", fontVariantNumeric: "tabular-nums", minWidth: 34 }}>#{p.num}</span>
-                                <span className={`prob-name${done ? " done" : ""}`}>{p.name}</span>
-                              </div>
-                              <div style={{ display: "flex", gap: 5, flexWrap: "wrap" }}>
-                                <span className="chip" style={{ background: p.difficulty === "Hard" ? "#1a0a0a" : "#0a1a0a", borderColor: p.difficulty === "Hard" ? "#7c2d12" : "#14532d", color: p.difficulty === "Hard" ? "#fdba74" : "#86efac" }}>{p.difficulty}</span>
-                                {hasNote && <span className="chip" style={{ background: "#15001a", borderColor: "#4c1d95", color: "#a78bfa" }}>note</span>}
-                              </div>
-                              {state[p.id]?.note && (
-                                <div style={{ marginTop: 7, fontSize: 11, color: "#d4dbe8", lineHeight: 1.6, whiteSpace: "pre-wrap", wordBreak: "break-word", borderLeft: "2px solid #1c2130", paddingLeft: 10 }}>
-                                  {state[p.id].note}
-                                </div>
-                              )}
-                            </div>
-                            <div style={{ display: "flex", gap: 5, flexShrink: 0, alignItems: "center", paddingTop: 1 }}>
-                              <a href={`https://leetcode.com/problems/${p.slug.replace(/-\d+$/, '')}/`} target="_blank" rel="noopener noreferrer" className="btn btn-lc" title="Open on LeetCode">
-                                LC <svg width="8" height="8" viewBox="0 0 8 8"><path d="M1 7L7 1M7 1H3M7 1v4" stroke="currentColor" strokeWidth="1.2" fill="none" strokeLinecap="round"/></svg>
-                              </a>
-                              <button className={`btn btn-note${hasNote ? " has-note" : ""}`} onClick={() => openNote(p)} title="Add note">✎</button>
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
           </div>
         )}
 
@@ -1126,6 +1081,16 @@ export default function App() {
           </div>
         </div>
       )}
+      {/* Scroll to Top Button */}
+      <button 
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        style={{ position: 'fixed', bottom: 30, right: 30, background: '#182540', color: '#d4dbe8', border: '1px solid #2e4060', borderRadius: '50%', width: 44, height: 44, display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', zIndex: 100, boxShadow: '0 4px 12px rgba(0,0,0,0.5)', transition: "all 0.2s" }}
+        title="Scroll to Top"
+        onMouseEnter={e => e.currentTarget.style.transform = 'translateY(-2px)'}
+        onMouseLeave={e => e.currentTarget.style.transform = 'translateY(0)'}
+      >
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+      </button>
     </div>
   );
 }
